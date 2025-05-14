@@ -1,0 +1,23 @@
+{
+  "name": "field-backend",
+  "version": "1.0.0",
+  "description": "FIELD - Backend API for the Invest-to-Earn Football Web3 Platform",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["web3", "api", "football", "blockchain", "nft", "defi"],
+  "author": "FIELD Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+} 

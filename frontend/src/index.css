@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-secondary text-text;
+    background-color: #0A0A0A;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(108, 171, 221, 0.05) 0%, transparent 30%),
+      radial-gradient(circle at 85% 30%, rgba(108, 171, 221, 0.05) 0%, transparent 30%);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-secondary font-bold py-2 px-6 rounded-lg hover:opacity-90 transition-all;
+  }
+  
+  .card {
+    @apply bg-accent/30 backdrop-blur-md rounded-xl p-6 border border-accent/20;
+  }
+  
+  .glassmorphism {
+    @apply backdrop-blur-md bg-accent/20 border border-accent/20 rounded-xl;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6;
+  }
+  
+  .subtitle {
+    @apply text-gray-300 text-lg mb-8;
+  }
+} 
