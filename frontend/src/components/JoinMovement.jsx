@@ -2,27 +2,16 @@ import React, { useState } from 'react';
 
 const JoinMovement = () => {
   const [email, setEmail] = useState('');
-  const [walletAddress, setWalletAddress] = useState('');
-  const [isWalletConnected, setIsWalletConnected] = useState(false);
   
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
   
-  const handleWalletChange = (e) => {
-    setWalletAddress(e.target.value);
-  };
-  
-  const connectWallet = () => {
-    // In a real app, this would connect to MetaMask or other wallet
-    setIsWalletConnected(true);
-    setWalletAddress('0x71C7...F5a2');
-  };
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     // In a real app, this would submit to an API
-    alert(`Joined with ${email} and wallet ${walletAddress}`);
+    alert(`Thank you! You've been added to our waitlist with email: ${email}`);
+    setEmail('');
   };
   
   return (
@@ -56,29 +45,6 @@ const JoinMovement = () => {
                       onChange={handleEmailChange}
                       required
                     />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="wallet" className="block text-sm font-medium mb-1">Wallet Address</label>
-                    <div className="flex">
-                      <input
-                        type="text"
-                        id="wallet"
-                        className="flex-1 bg-accent/30 border border-accent/50 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50"
-                        placeholder="0x..."
-                        value={walletAddress}
-                        onChange={handleWalletChange}
-                        disabled={isWalletConnected}
-                        required
-                      />
-                      <button
-                        type="button"
-                        onClick={connectWallet}
-                        className="bg-primary/20 border border-primary/50 text-primary px-4 py-2 rounded-r-lg hover:bg-primary/30 transition-all"
-                      >
-                        Connect
-                      </button>
-                    </div>
                   </div>
                   
                   <div className="pt-4">

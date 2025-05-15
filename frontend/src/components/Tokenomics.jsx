@@ -73,78 +73,83 @@ const Tokenomics = () => {
             </div>
           </div>
           
-          {/* Farming Card */}
-          <div className="card">
-            <h3 className="text-2xl font-bold mb-6 text-primary">Farming Strategy</h3>
-            
-            <div className="space-y-4">
-              <div className="flex justify-between items-center pb-2 border-b border-accent/30">
-                <div className="font-bold">How It Works</div>
+          {/* Combined Farming Strategy and Token Stats */}
+          <div className="card md:col-span-2">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Farming Strategy */}
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-primary">Farming Strategy</h3>
+                
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center pb-2 border-b border-accent/30">
+                    <div className="font-bold">How It Works</div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="text-primary">1</div>
+                    <div>Deposit ETH or AVAX</div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="text-primary">2</div>
+                    <div>Earn FIELD points based on amount & time</div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="text-primary">3</div>
+                    <div>Redeem for $FIELD tokens at launch</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center mt-6 pt-4 border-t border-accent/30">
+                    <div className="font-bold">Duration Bonus</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="font-medium">90 days</div>
+                    <div className="text-lg font-mono">1.5x points</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="font-medium">180 days</div>
+                    <div className="text-lg font-mono">2.5x points</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="font-medium">360 days</div>
+                    <div className="text-lg font-mono">4.0x points</div>
+                  </div>
+                </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <div className="text-primary">1</div>
-                <div>Deposit ETH or AVAX</div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="text-primary">2</div>
-                <div>Earn FIELD points based on amount & time</div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="text-primary">3</div>
-                <div>Redeem for $FIELD tokens at launch</div>
-              </div>
-              
-              <div className="flex justify-between items-center mt-6 pt-4 border-t border-accent/30">
-                <div className="font-bold">Duration Bonus</div>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div className="font-medium">90 days</div>
-                <div className="text-lg font-mono">1.5x points</div>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div className="font-medium">180 days</div>
-                <div className="text-lg font-mono">2.5x points</div>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div className="font-medium">360 days</div>
-                <div className="text-lg font-mono">4.0x points</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Token Stats */}
-          <div className="card">
-            <h3 className="text-2xl font-bold mb-6 text-primary">$FIELD Token</h3>
-            
-            <div className="space-y-4">
-              <div className="flex justify-between items-center pb-2 border-b border-accent/30">
-                <div className="font-bold">Network</div>
-                <div className="font-mono">Avalanche Subnet</div>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div className="font-medium">Current TVL</div>
-                <div className="font-mono text-primary">$7.2M</div>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div className="font-medium">Active Farmers</div>
-                <div className="font-mono">3,450+</div>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <div className="font-medium">Farming Launch</div>
-                <div className="font-mono">ACTIVE</div>
-              </div>
-              
-              <div className="flex justify-between items-center pt-4 mt-6 border-t border-accent/30">
-                <button className="btn-primary w-full py-3">Start Farming</button>
+              {/* $FIELD Token */}
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-primary">$FIELD Token</h3>
+                
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center pb-2 border-b border-accent/30">
+                    <div className="font-bold">Network</div>
+                    <div className="font-mono">Avalanche Subnet</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="font-medium">Current TVL</div>
+                    <div className="font-mono text-primary">$7.2M</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="font-medium">Active Farmers</div>
+                    <div className="font-mono">3,450+</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div className="font-medium">Farming Launch</div>
+                    <div className="font-mono">ACTIVE</div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center pt-4 mt-6 border-t border-accent/30">
+                    <button className="btn-primary w-full py-3">Start Farming</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
