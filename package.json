@@ -1,0 +1,18 @@
+{
+  "name": "field-united",
+  "version": "1.0.0",
+  "description": "FIELD United platform - Main website and DApp",
+  "scripts": {
+    "start:frontend": "cd frontend && npm run dev",
+    "start:dapp": "cd dapp && npm run dev",
+    "start": "concurrently --kill-others --names \"DAPP,FRONTEND\" --prefix-colors \"blue,green\" --success first \"npm run start:dapp\" \"sleep 2 && npm run start:frontend\"",
+    "frontend:demo": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "build:dapp": "cd dapp && npm run build",
+    "build": "npm run build:frontend && npm run build:dapp"
+  },
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+} 

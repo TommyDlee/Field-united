@@ -11,7 +11,7 @@ const Navbar = () => {
       key: 'ecosystem',
       submenu: [
         { name: 'Subnet', href: '#subnet' },
-        { name: 'Dapp', href: '#dapp' },
+        { name: 'Dapp', href: '/dapp' },
         { name: 'NFT', href: '#nfts' },
         { name: 'Club', href: '#clubs' },
         { name: 'Store', href: '#store' }

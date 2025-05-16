@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #6CABDD;
+  --color-secondary: #1A1A1A;
+  --color-accent: #3A3A3A;
+  --color-text: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-secondary text-text font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary/20 border border-primary/40 text-primary px-4 py-2 rounded-lg hover:bg-primary/30 transition-all;
+  }
+  
+  .card {
+    @apply bg-accent/30 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-accent/20;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-white;
+  }
+  
+  .subtitle {
+    @apply text-lg text-gray-300 mb-8;
+  }
+  
+  .glassmorphism {
+    @apply bg-accent/30 backdrop-blur-sm border border-accent/20;
+  }
+} 
