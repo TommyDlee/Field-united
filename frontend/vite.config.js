@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import fs from 'fs';
 import path from 'path';
 
@@ -17,10 +18,15 @@ const isDappServerRunning = () => {
 };
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    tsconfigPaths()
+  ],
   server: {
     port: 3000,
     open: true,
+    // Proxy disabled since dapp has been integrated into frontend
+    /* 
     proxy: {
       '/dapp': {
         target: 'http://localhost:3002',
@@ -84,6 +90,14 @@ export default defineConfig({
           });
         }
       }
+    }
+    */
+  },
+  resolve: {
+    alias: {
+      // Removed 'shared' alias since it's now part of frontend
+      'frontend': path.resolve(__dirname, '.'),
+      '@profile': path.resolve(__dirname, 'src')
     }
   }
 }); 

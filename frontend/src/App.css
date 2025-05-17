@@ -1,0 +1,82 @@
+/* App.css - Global styles for the frontend */
+
+.bg-dark {
+  background-color: #0a0c10;
+  color: #ffffff;
+}
+
+/* Add space for the fixed navbar */
+.pt-navbar {
+  padding-top: 4.5rem;
+}
+
+/* Glassmorphism effect for cards and modals */
+.glassmorphism {
+  background: rgba(20, 25, 40, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Primary button style */
+.btn-primary {
+  background-color: #6CABDD;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #5a91bc;
+}
+
+/* Secondary button style */
+.btn-secondary {
+  background-color: rgba(108, 171, 221, 0.15);
+  color: #6CABDD;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(108, 171, 221, 0.25);
+}
+
+/* Primary color text */
+.text-primary {
+  color: #6CABDD;
+}
+
+/* Medal colors for rankings */
+.bg-gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffcd00 50%, #e6b800 100%);
+  color: #5c4c00;
+}
+
+.bg-silver {
+  background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 50%, #a9a9a9 100%);
+  color: #3d3d3d;
+}
+
+.bg-bronze {
+  background: linear-gradient(135deg, #cd7f32 0%, #b36a2c 50%, #a05a2c 100%);
+  color: #3d2110;
+}
+
+/* Dark backgrounds for the dapp pages */
+.bg-gray-800 {
+  background-color: #1e2131;
+}
+
+.bg-gray-700 {
+  background-color: #2a2d3d;
+}
+
+/* Content container with proper padding for dapp pages */
+.dapp-container {
+  padding-top: 5rem;
+  min-height: calc(100vh - 5rem);
+} 

@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#6CABDD', // Sky blue (Manchester City blue)
+        'primary-dark': '#5A91BC', // Darker variant of primary
         secondary: '#1A1A1A', // Dark background
         accent: '#3A3A3A',  // Lighter card background
         text: '#FFFFFF',

@@ -34,4 +34,56 @@
   .subtitle {
     @apply text-gray-300 text-lg mb-8;
   }
+}
+
+:root {
+  --primary: #6CABDD;
+  --accent: #1A2234;
+}
+
+body {
+  @apply bg-dark text-white min-h-screen font-sans;
+}
+
+@layer components {
+  .card {
+    @apply bg-accent/60 backdrop-blur-sm p-6 rounded-xl border border-accent/40 shadow-lg;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-white;
+  }
+  
+  .subtitle {
+    @apply text-xl text-gray-300 mb-8;
+  }
+  
+  .bg-dark {
+    background-color: #0A0C10;
+  }
+  
+  .bg-accent {
+    background-color: var(--accent);
+  }
+  
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  
+  .border-primary {
+    border-color: var(--primary);
+  }
+  
+  .hover\:bg-primary-dark:hover {
+    background-color: #5A91BC;
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-md font-medium transition duration-300;
+  }
 } 
