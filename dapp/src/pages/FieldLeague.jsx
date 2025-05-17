@@ -3,6 +3,21 @@ import { Link } from 'react-router-dom'
 
 const FieldLeague = () => {
   const [filter, setFilter] = useState('all')
+  const [formData, setFormData] = useState({
+    clubName: '',
+    contactName: '',
+    email: '',
+    phone: '',
+    country: '',
+    sport: '',
+    website: '',
+    message: ''
+  })
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    error: false,
+    message: ''
+  })
   
   const clubs = [
     {
@@ -68,6 +83,40 @@ const FieldLeague = () => {
   }
   
   const totalVotes = clubs.reduce((sum, club) => sum + club.votes, 0)
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    
+    // Simulate form submission
+    setFormStatus({
+      submitted: true,
+      error: false,
+      message: 'Votre demande a été envoyée avec succès ! Notre équipe vous contactera prochainement.'
+    })
+    
+    // Reset form after success
+    setFormData({
+      clubName: '',
+      contactName: '',
+      email: '',
+      phone: '',
+      country: '',
+      sport: '',
+      website: '',
+      message: ''
+    })
+    
+    // In a real application, you would send the data to your backend here
+    console.log('Form submitted:', formData)
+  }
 
   return (
     <section className="py-24 px-6">
@@ -233,6 +282,160 @@ const FieldLeague = () => {
                 <p className="text-sm text-gray-300">Winners gain access to potential club tokenization and further benefits.</p>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Contact Form */}
+        <div className="mt-12 card bg-gradient-to-br from-blue-900/20 to-primary/20">
+          <h3 className="text-xl font-bold mb-4">Inscrire votre club</h3>
+          <p className="mb-6">
+            Vous représentez un club sportif et souhaitez participer à la FIELD League ? 
+            Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement.
+          </p>
+          
+          {formStatus.submitted ? (
+            <div className={`p-4 rounded-lg ${formStatus.error ? 'bg-red-500/20' : 'bg-green-500/20'} mb-4`}>
+              <p className={formStatus.error ? 'text-red-300' : 'text-green-300'}>
+                {formStatus.message}
+              </p>
+            </div>
+          ) : null}
+          
+          <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-4">
+            <div className="flex flex-col">
+              <label htmlFor="clubName" className="text-sm mb-1">Nom du club *</label>
+              <input
+                type="text"
+                id="clubName"
+                name="clubName"
+                value={formData.clubName}
+                onChange={handleInputChange}
+                required
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Ex: FC Barcelona"
+              />
+            </div>
+            
+            <div className="flex flex-col">
+              <label htmlFor="contactName" className="text-sm mb-1">Nom du contact *</label>
+              <input
+                type="text"
+                id="contactName"
+                name="contactName"
+                value={formData.contactName}
+                onChange={handleInputChange}
+                required
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Ex: Jean Dupont"
+              />
+            </div>
+            
+            <div className="flex flex-col">
+              <label htmlFor="email" className="text-sm mb-1">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="contact@votreclub.com"
+              />
+            </div>
+            
+            <div className="flex flex-col">
+              <label htmlFor="phone" className="text-sm mb-1">Téléphone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="+33 6 12 34 56 78"
+              />
+            </div>
+            
+            <div className="flex flex-col">
+              <label htmlFor="country" className="text-sm mb-1">Pays *</label>
+              <input
+                type="text"
+                id="country"
+                name="country"
+                value={formData.country}
+                onChange={handleInputChange}
+                required
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Ex: France"
+              />
+            </div>
+            
+            <div className="flex flex-col">
+              <label htmlFor="sport" className="text-sm mb-1">Sport *</label>
+              <select
+                id="sport"
+                name="sport"
+                value={formData.sport}
+                onChange={handleInputChange}
+                required
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="">Sélectionnez un sport</option>
+                <option value="football">Football</option>
+                <option value="rugby">Rugby</option>
+                <option value="basketball">Basketball</option>
+                <option value="padel">Padel</option>
+                <option value="tennis">Tennis</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+            
+            <div className="flex flex-col">
+              <label htmlFor="website" className="text-sm mb-1">Site web</label>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                value={formData.website}
+                onChange={handleInputChange}
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="https://www.votreclub.com"
+              />
+            </div>
+            
+            <div className="flex flex-col md:col-span-2">
+              <label htmlFor="message" className="text-sm mb-1">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                rows="4"
+                className="bg-accent/50 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Parlez-nous de votre club et pourquoi vous souhaitez rejoindre la FIELD League..."
+              ></textarea>
+            </div>
+            
+            <div className="md:col-span-2 mt-2">
+              <button type="submit" className="btn-primary w-full md:w-auto">
+                Envoyer la demande
+              </button>
+              <p className="text-xs text-gray-400 mt-2">
+                * Les champs marqués d'un astérisque sont obligatoires
+              </p>
+            </div>
+          </form>
+          
+          <div className="mt-8 p-4 bg-accent/30 rounded-lg text-sm">
+            <h4 className="font-bold mb-2">Ce qui se passe ensuite:</h4>
+            <ol className="list-decimal ml-5 space-y-1">
+              <li>Notre équipe examine votre demande sous 48h</li>
+              <li>Nous vous contactons pour discuter des détails et valider votre participation</li>
+              <li>Une fois approuvé, votre club apparaîtra dans la FIELD League</li>
+              <li>Vous recevrez des outils pour mobiliser votre communauté et maximiser vos votes</li>
+            </ol>
           </div>
         </div>
       </div>
